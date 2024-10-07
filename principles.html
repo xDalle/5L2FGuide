@@ -25,6 +25,20 @@
 		<div class="centered-container">
 			<h2 class="select-info" id="select-info">Select which <strong>Principles</strong> your organization needs to comply with.</h2>
 			<h2 class="select-info" id="selected-info" style="display:none;">You have selected the following <strong>Principles</strong> for compliance:</h2>
+			
+			<div class="circle-container" id="circle-container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+
 			<button class="assert-button" id="assert-button">Check</button>
 			<button class="play-again-button" id="play-again-button">Play Again</button>
 		</div>
@@ -45,6 +59,9 @@
     <script>
 		const assertButton = document.getElementById('assert-button');
 		const selectInfo = document.getElementById('select-info');
+
+		const circleContainer = document.getElementById('circle-container');
+		const circles = circleContainer.getElementsByClassName('circle');
 
 		assertButton.classList.add('disabled');
 		assertButton.disabled = true;
@@ -132,6 +149,14 @@
 				assertButton.classList.add('disabled');
 				assertButton.disabled = true;
 			}
+
+			for (let i = 0; i < circles.length; i++) {
+				if (selectedCards.includes(i)) {
+					circles[i].classList.add('filled');
+				} else {
+					circles[i].classList.remove('filled');
+				}
+			}
 		}
 
 		function createCards() {
@@ -164,7 +189,7 @@
 					} else {
 						selectedCards.push(index);
 					}
-					updateButtonState();
+					updateButtonState();                
 				});
 
 				cardsContainer.appendChild(card);
@@ -213,6 +238,8 @@
 			if (selectedCards.length > 0) {
 				const resultsDisplay = document.getElementById('results');
 				const selectInfo = document.querySelector('.select-info');
+
+				resultsDisplay.style.visibility = 'visible';
 
 				document.getElementById('select-info').style.display = 'none';
 				document.getElementById('selected-info').style.display = 'block';
@@ -281,10 +308,14 @@
 		document.getElementById('play-again-button').addEventListener('click', () => {
 			cardsContainer.innerHTML = '';
 			selectedCards = [];
+			
 			document.getElementById('assert-button').style.display = 'inline-block';
 			document.getElementById('play-again-button').style.display = 'none';
 
-			document.getElementById('results').innerHTML = '';
+			const resultsDisplay = document.getElementById('results');
+			resultsDisplay.innerHTML = '';
+			resultsDisplay.style.visibility = 'hidden';
+
 			document.getElementById('select-info').style.display = 'block';
 			document.getElementById('selected-info').style.display = 'none';
 
