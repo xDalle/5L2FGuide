@@ -69,9 +69,21 @@
 
         let currentIndex = 0;
 
+        updateCarousel();
+
         function updateCarousel() {
             const carouselTextElement = document.getElementById('carousel-text');
-            carouselTextElement.innerHTML = texts[currentIndex];
+            
+            if (carouselTextElement.classList.contains('hidden')) {
+                carouselTextElement.classList.remove('hidden');
+            } else {
+                carouselTextElement.classList.add('hidden');
+
+                setTimeout(() => {
+                    carouselTextElement.innerHTML = texts[currentIndex];
+                    carouselTextElement.classList.remove('hidden');
+                }, 200);
+            }
         }
 
         function nextText() {
