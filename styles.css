@@ -1,25 +1,29 @@
 body {
-    font-family: Arial, sans-serif; /* Example font family */
-    font-size: 16px; /* Set the base font size */
-    line-height: 1.5; /* Line height for better readability */
-    color: #333; /* Text color */
-	margin: 0; /* Remove default body margin */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
 }
 
 main p {
-    font-size: inherit; /* Inherit the base font size */
-    width: 80%; 
+    font-size: inherit;
 }
 
 h2 {
+    margin-bottom: 20px;
     color: #333;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 p {
-    line-height: 1.6;
     margin-bottom: 15px;
+    line-height: 1.6;
     color: #555;
 }
 
@@ -32,20 +36,20 @@ ol li {
 }
 
 ul {
-    list-style-type: disc; /* Changes bullet style to a disc */
-    padding-left: 20px; /* Indentation for bullet points */
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
 strong {
-    color: #007BFF; /* Bootstrap Primary Color */
+    color: #007BFF;
 }
 
 header {
     display: flex;
+    padding: 10px 20px;
     justify-content: space-between;
     align-items: center;
-    background-color: #003366; /* Azul escuro */
-    padding: 10px 20px;
+    background-color: #003366;
     color: white;
 }
 
@@ -54,10 +58,10 @@ header {
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
 }
 
 nav ul li {
@@ -71,23 +75,23 @@ nav ul li a {
 
 .navbar {
     display: flex;
-    justify-content: space-around;
-    background-color: #003366; /* Background color for the navbar */
     padding: 10px 0;
+    justify-content: space-between;
+    background-color: #003366;
 	font-weight: bold;
 }
 
 .navbar a {
-    color: white; /* Text color */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px; /* Padding for spacing */
-    transition: all 0.3s ease; /* Smooth transition */
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    font-weight: bold; /* Make text bold on hover */
-    background-color: #00509e; /* Background color on hover */
-    border-radius: 5px; /* Optional: rounded corners */
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #00509e;
 }
 
 .nav__logo {
@@ -96,28 +100,39 @@ nav ul li a {
 
 .carousel {
     display: flex;
+    width: 80%;
+    margin: 20px auto; 
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 440px;
     align-items: center;
-    justify-content: flex-start; /* Distribui os elementos para as extremidades */
-    margin: 20px; 
-	background-color: #cce5ff; /* Cor de fundo do carrossel (tom claro de azul) */
-    padding: 20px; /* Espaçamento interno para deixar mais bonito */
-    border-radius: 8px; /* Bordas arredondadas, opcional */
+    background-color: #cce5ff;
+}
+
+.carousel-content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .carousel-text {
     width: 80%;
     font-size: 24px;
     padding: 20px;
-    text-align: left; /* Alinha o texto à esquerda */
-    margin: 0 auto; /* Centers the carousel text within its container */
+    text-align: center;
+    margin: 0 auto;
 }
 
 .carousel-button {
     background-color: #00509e;
     color: white;
-    padding: 10px;
     border-radius: 50%;
+    border: none;
     transition: background-color 0.3s ease;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
 }
 
 .carousel-button:hover {
@@ -125,7 +140,7 @@ nav ul li a {
 }
 
 .large-logo {
-    height: 350px; /* Aumenta a altura da logo maior */
+    height: 350px;
     margin-left: 20px;
 }
 
@@ -143,136 +158,131 @@ nav ul li a {
     font-size: 32px;
     line-height: 40px;
     color: #000000;
-    padding-bottom: 32px;
-    text-align: start; /* Centers the text */
+    padding-bottom: 16px;
+    text-align: start;
     width: 80%;
-    margin: 0 auto; /* Centers the element horizontally */
+    margin: 0 auto;
 }
   
 .intro-paragraph, p, li {
     font-size: 18px;
     line-height: 28px;
     padding-bottom: 16px;
-    text-align: start; /* Centers the text */
+    text-align: start;
     width: 80%;
-    margin: 0 auto; /* Centers the element horizontally */
+    margin: 0 auto;
 }
 
 .scope-text {
     width: 80%;
     font-size: 24px;
     padding: 20px;
-    text-align: center; /* Alinha o texto à esquerda */
-    margin: 0 auto; /* Centers the carousel text within its container */
+    text-align: center;
+    margin: 0 auto;
 }
 
 .scope-title {
-    font-size: 1.5em; /* Scope titles size */
-    margin-top: 20px; /* Space above the title */
-    margin-bottom: 10px; /* Space below the title */
-    color: #333; /* Title color */
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .item-title {
-    font-size: 1.0em; /* Scope titles size */
-    margin-top: 20px; /* Space above the title */
-    margin-bottom: 10px; /* Space below the title */
+    font-size: 1.0em;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .item-title2 {
-    list-style-type: "-"; /* Changes bullet style to a disc */
-    padding-left: 20px; /* Indentation for bullet points */
+    list-style-type: "-";
+    padding-left: 20px;
 }
 
 #cards-container {
-    display: flex; /* Usar flexbox para dispor os cartões lado a lado */
-    flex-wrap: wrap; /* Permitir que os cartões quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os cartões */
-    margin: 20px; /* Espaçamento externo do contêiner */
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 10px;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; */
 }
 
 #results {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-top: 20px; /* Adds space between cards and results */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .card {
-    border: 1px solid #ccc; /* Existing border */
-    border-radius: 8px; /* Slightly increase radius for rounded corners */
+    border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 20px; 
     margin: 10px; 
     cursor: pointer; 
-    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+    transition: background-color 0.3s, transform 0.3s;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    color: #333; /* Dark text color */
-    font-weight: bold; /* Bold text for emphasis */
-    text-align: center; /* Center the text */
-    width: calc(20% - 20px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */  
-    padding: 30px; /* Increased padding for more space */
-    background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /* Light blue gradient */
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    /* width: calc(18% - 20px); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
 }
 
 .select-info {
     font-size: 24px; 
-    color: #ffffff; 
     text-align: center; 
-    margin-top: 20px; 
     font-family: 'Arial', sans-serif; 
-    background-color: #4A90E2; 
-    padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /* Light blue gradient */
 }
 
 @media (max-width: 600px) {
     .card {
-        width: 100%; /* Full width on smaller screens */
-        height: auto; /* Automatic height */
+        width: 100%;
+        height: auto;
     }
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Slightly lift the card on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .card.selected {
-    background: #007bff; /* Cor de fundo ao selecionar */
-    color: white; /* Cor do texto ao selecionar */
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Shadow effect on selection */
+    background: #007bff;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
 
 .card-title {
-    color: #007bff; /* A bright blue tone for "Principle 1" */
-    font-size: 30px; /* Adjust font size as needed */
-    font-weight: bold; /* Bold for emphasis */
+    color: #007bff;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .card-subtitle {
-    color: #0056b3; /* A darker blue tone for the subtitle */
-    font-size: 18px; /* Slightly smaller than title */
+    color: #0056b3;
+    font-size: 18px;
+    margin: 20px 0;
+
 }
 
 .card-text {
-    color: #003f7f; /* A consistent blue tone for other text */
-    font-size: 16px; /* Regular text size */
-    margin: 5px 0; /* Space between lines */
+    color: #003f7f;
+    font-size: 16px;
+    margin: 20px 0;
 }
 
 .card.selected .card-title,
 .card.selected .card-subtitle,
 .card.selected .card-text {
-    color: white; /* Change text color to white when selected */
+    color: white;
 }
 
 .large-logo {
@@ -285,45 +295,89 @@ nav ul li a {
 
 .centered-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 20px; /* Add some space below */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .assert-button {
-    background-color: #28a745; /* Green background */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .play-again-button {
-    background-color: #ffae00; /* Blue background */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
-    display: none; /* Initially hidden */
-    margin-top: 40px;
+    background-color: #ffae00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+}
+
+button.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+button.enabled {
+    background-color: #28a745;
+    cursor: pointer;
+}
+
+.results-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-container h3 {
+    color: #333;
+}
+
+.results-container p {
+    font-size: 16px;
+    color: #555;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.principles-list {
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #eafaf1;
+    border-radius: 4px;
 }
 
 .footer {
-    background-color: #333; /* Dark background for contrast */
-    color: white;           /* White text for all content */
-    padding: 20px;         /* Padding around the content */
-    text-align: center;     /* Center align the text */
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    color: white !important; 
 }
 
 .footer a {
-    color: white;           /* Make links white */
-    text-decoration: none;  /* Remove underline from links */
+    color: #007BFF;
+    text-decoration: none;
 }
 
 .footer a:hover {
-    text-decoration: underline; /* Underline links on hover for visibility */
+    text-decoration: underline;
 }

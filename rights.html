@@ -23,15 +23,14 @@
 
     <main>
 		<div class="centered-container">
-			<div id= instructions class="select-info">
-				<h2>Select which individual rights your organization needs to comply with.</h2>
-			</div>
+			<h2 class="select-info" id="select-info">Select which <strong>Rights</strong> your organization needs to comply with.</h2>
+			<h2 class="select-info" id="selected-info" style="display:none;">You have selected the following <strong>Rights</strong> for compliance:</h2>
 			<button class="assert-button" id="assert-button">Check</button>
 			<button class="play-again-button" id="play-again-button">Play Again</button>
 		</div>
         <div id="cards-container">
         </div>
-		<div id="results"></div>
+		<div id="results" class="results-container"></div>
 
     </main>
 
@@ -44,6 +43,12 @@
     </footer>
 
     <script>
+		const assertButton = document.getElementById('assert-button');
+		const selectInfo = document.getElementById('select-info');
+
+		assertButton.classList.add('disabled');
+		assertButton.disabled = true;
+
 		const principles = [
 			"#1 Minimized collection",
 			"#2 Confirmation of the existence of treatment",
@@ -142,6 +147,18 @@
 		const cardsContainer = document.getElementById('cards-container');
 		let selectedCards = [];
 
+		function updateButtonState() {
+			if (selectedCards.length > 0) {
+				assertButton.classList.remove('disabled');
+				assertButton.classList.add('enabled');
+				assertButton.disabled = false; // Enable the button
+			} else {
+				assertButton.classList.remove('enabled');
+				assertButton.classList.add('disabled');
+				assertButton.disabled = true; // Disable the button
+			}
+		}
+
 		function createCards() {
 			principles.forEach((principle, index) => {
 				const card = document.createElement('div');
@@ -172,6 +189,7 @@
 					} else {
 						selectedCards.push(index);
 					}
+					updateButtonState();
 				});
 
 				cardsContainer.appendChild(card);
@@ -217,77 +235,93 @@
 		}
 
 		document.getElementById('assert-button').addEventListener('click', () => {
-			const resultsDisplay = document.getElementById('results');
-			if (resultsDisplay) {
-				resultsDisplay.innerHTML = '';
-			} else {
-				resultsDisplay = document.createElement('div');
-				resultsDisplay.id = 'results';
-				document.body.appendChild(resultsDisplay);
-			}
+			if (selectedCards.length > 0) {
+				const resultsDisplay = document.getElementById('results');
+				const selectInfo = document.querySelector('.select-info');
 
-			cardsContainer.innerHTML = '';
-			selectedCards.sort((a, b) => a - b);
+				document.getElementById('select-info').style.display = 'none';
+				document.getElementById('selected-info').style.display = 'block';
 
-			selectedCards.forEach(index => {
-				const card = document.createElement('div');
-				card.className = 'card selected';
+				if (resultsDisplay) {
+					resultsDisplay.innerHTML = '';
+				} else {
+					resultsDisplay = document.createElement('div');
+					resultsDisplay.id = 'results';
+					document.body.appendChild(resultsDisplay);
+				}
 
-				const title = principles[index];
-				const subtitle = subtitles[index];
-				const content = infos[index].replace(/\n/g, '<br>');
-				card.innerHTML = `
-					<div class="card-title">${title}</div>
-					<div class="card-subtitle">${subtitle}</div>
-					<div class="card-text">${content}</div>
-				`;
+				cardsContainer.innerHTML = '';
+				selectedCards.sort((a, b) => a - b);
 
-				cardsContainer.appendChild(card);
-			});
+				selectedCards.forEach(index => {
+					const card = document.createElement('div');
+					card.className = 'card selected';
 
-			const { 
-				pbDPercentage, 
-				isoPercentage, 
-				combinedPercentage, 
-				pbDFound, 
-				pbDNotFound, 
-				isoFound, 
-				isoNotFound,
-				combinedFound,
-				pbDMessagesFound,
-				isoMessagesFound
-			} = displayResults();
-			
-			resultsDisplay.innerHTML = `
-				<h3>Results of the Selected Principles:</h3>
-				<p>Privacy by Design: ${pbDPercentage}%</p>
-				<p>Principles found: {${pbDFound.join(', ')}}</p>
-				${pbDMessagesFound.length > 0 ? `<p>Equivalence on Privacy by Design: <br> ${pbDMessagesFound.join('<br>')}</p>` : ''}
-				<p>ISO/IEC 29100: ${isoPercentage}%</p>
-				<p>Principles found: {${isoFound.join(', ')}}</p>
-				${isoMessagesFound.length > 0 ? `<p>Equivalence on ISO/IEC 29100: <br> ${isoMessagesFound.join('<br>')}</p>` : ''}
-				<p>Both frameworks combined: ${combinedPercentage}%</p>
-				<p>Principles found: {${combinedFound.join(', ')}}</p>
-			`;
+					const title = principles[index];
+					const subtitle = subtitles[index];
+					const content = infos[index].replace(/\n/g, '<br>');
+					card.innerHTML = `
+						<div class="card-title">${title}</div>
+						<div class="card-subtitle">${subtitle}</div>
+						<div class="card-text">${content}</div>
+					`;
 
-			document.getElementById('assert-button').style.display = 'none';
-			document.getElementById('instructions').style.display = 'none';
-			document.getElementById('play-again-button').style.display = 'inline-block';
+					cardsContainer.appendChild(card);
+				});
+
+				const { 
+					pbDPercentage, 
+					isoPercentage, 
+					combinedPercentage, 
+					pbDFound, 
+					pbDNotFound, 
+					isoFound, 
+					isoNotFound,
+					combinedFound,
+					pbDMessagesFound,
+					isoMessagesFound
+				} = displayResults();
+
+				resultsDisplay.innerHTML = `
+                    <h3>Results of the selected <strong>Rights</strong>:</h3>
+                    <p><span>&#8226;</span> Privacy by Design: <span class="highlight">${pbDPercentage}%</span></p>
+                    <div class="principles-list">Principles found (Privacy by Design): {${pbDFound.join(', ')}}</div>
+                    ${pbDMessagesFound.length > 0 ? `<p>Equivalence on Privacy by Design: <br> ${pbDMessagesFound.join('<br>')}</p>` : ''}
+                    <p><span>&#8226;</span> ISO/IEC 29100: <span class="highlight">${isoPercentage}%</span></p>
+                    <div class="principles-list">Principles found (ISO): {${isoFound.join(', ')}}</div>
+                    ${isoMessagesFound.length > 0 ? `<p>Equivalence on ISO/IEC 29100: <br> ${isoMessagesFound.join('<br>')}</p>` : ''}
+                    <p><span>&#8226;</span> Combined frameworks: <span class="highlight">${combinedPercentage}%</span></p>
+                    <div class="principles-list">Principles found (Combined): {${combinedFound.join(', ')}}</div>
+                `;
+
+				document.getElementById('selected-info').style.display = 'block';
+				document.getElementById('select-info').style.display = 'none';
+
+				document.getElementById('play-again-button').style.display = 'inline-block';
+				document.getElementById('assert-button').style.display = 'none';
+
+			}		
 		});
 
 		document.getElementById('play-again-button').addEventListener('click', () => {
 			cardsContainer.innerHTML = '';
 			selectedCards = [];
-			document.getElementById('instructions').style.display = 'inline-block';
 			document.getElementById('assert-button').style.display = 'inline-block';
 			document.getElementById('play-again-button').style.display = 'none';
 
 			document.getElementById('results').innerHTML = '';
+			document.getElementById('select-info').style.display = 'block';
+			document.getElementById('selected-info').style.display = 'none';
+
+			const selectInfo = document.querySelector('.select-info');
+			selectInfo.style.visibility = 'visible';
 
 			createCards();
+			updateButtonState();
 		});
 
 		createCards();
+		updateButtonState();
 	</script>
 </body>
 </html>
