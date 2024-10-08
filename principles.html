@@ -93,16 +93,16 @@
 		];
 
 		const infos = [
-			"• GDPR equivalent: Purpose Limitation\n• ADPPA equivalent: Data Minimization\n• Privacy Act equivalent: Direct marketing / Use or disclosure of personal information\n• CCPA equivalent: Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
-			"• GDPR equivalent: Storage Limitation\n• ADPPA equivalent: Data Minimization\n• Privacy Act equivalent: Use or disclosure of personal information\n• CCPA equivalent: not explicity declared",
-			"• GDPR equivalent: Data Minimization\n• ADPPA equivalent: Data Minimization\n• Privacy Act equivalent: Collection of solicited personal information\n• CCPA equivalent: Right to Delete / Right to Opt Out (it is an individual Right!)",
-			"• GDPR equivalent: Right of Access (it is an individual Right!)\n• ADPPA equivalent: Executive Responsibility (large data holders only)\n• Privacy Act equivalent: Access to personal information / Notification of the collection of personal information\n• CCPA equivalent: Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
-			"• GDPR equivalent: Accuracy\n• ADPPA equivalent: Right of Correction (it is an individual Right!)\n• Privacy Act equivalent: Quality of personal information / Correction of personal information\n• CCPA equivalent: -",
-			"• GDPR equivalent: Lawfulness, fairness and transparency\n• ADPPA equivalent: Right of Transparency (it is an individual Right!)\n• Privacy Act equivalent: Open and transparent management of personal information\n• CCPA equivalent: Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
-			"• GDPR equivalent: Integrity and confidentiality\n• ADPPA equivalent: Right of Data Security (it is an individual Right!)\n• Privacy Act equivalent: Security of personal information\n• CCPA equivalent: Security procedures and practices (not a Principle!)",
-			"• GDPR equivalent: Restrictions (it is an individual Right!)\n• ADPPA equivalent: Data Minimization\n• Privacy Act equivalent: Security of personal information\n• CCPA equivalent: Security procedures and practices (not a Principle!)",
-			"• GDPR equivalent: Restrictions (it is an individual Right!)\n• ADPPA equivalent: Data Minimization\n• Privacy Act equivalent: -\n• CCPA equivalent: Right of No Retaliation (it is an individual Right!)",
-			"• GDPR equivalent: Accountability\n• ADPPA equivalent: Executive Responsibility (large data holders only)\n• Privacy Act equivalent: -\n• CCPA equivalent: Right of No Retaliation (it is an individual Right!)"
+			"• GDPR equivalent: <span>&#9989</span> Purpose Limitation<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Direct marketing / Use or disclosure of personal information<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
+			"• GDPR equivalent: <span>&#9989</span> Storage Limitation<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Use or disclosure of personal information<br><br>• CCPA equivalent: <span>&#9989</span> but not explicity declared",
+			"• GDPR equivalent: <span>&#9989</span> Data Minimization<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Collection of solicited personal information<br><br>• CCPA equivalent: <span>&#9989</span> Right to Delete / Right to Opt Out (it is an individual Right!)",
+			"• GDPR equivalent: <span>&#9989</span> Right of Access (it is an individual Right!)<br><br>• ADPPA equivalent: <span>&#9989</span> Executive Responsibility (large data holders only)<br><br>• Privacy Act equivalent: <span>&#9989</span> Access to personal information / Notification of the collection of personal information<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
+			"• GDPR equivalent: <span>&#9989</span> Accuracy<br><br>• ADPPA equivalent: <span>&#9989</span> Right of Correction (it is an individual Right!)<br><br>• Privacy Act equivalent: <span>&#9989</span> Quality of personal information / Correction of personal information<br><br>• CCPA equivalent: <span>&#10060</span>",
+			"• GDPR equivalent: <span>&#9989</span> Lawfulness, fairness and transparency<br><br>• ADPPA equivalent: <span>&#9989</span> Right of Transparency (it is an individual Right!)<br><br>• Privacy Act equivalent: <span>&#9989</span> Open and transparent management of personal information<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information (it is an individual Right!)",
+			"• GDPR equivalent: <span>&#9989</span> Integrity and confidentiality<br><br>• ADPPA equivalent: <span>&#9989</span> Right of Data Security (it is an individual Right!)<br><br>• Privacy Act equivalent: <span>&#9989</span> Security of personal information<br><br>• CCPA equivalent: <span>&#9989</span> Security procedures and practices (not a Principle!)",
+			"• GDPR equivalent: <span>&#9989</span> Restrictions (it is an individual Right!)<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Security of personal information<br><br>• CCPA equivalent: <span>&#9989</span> Security procedures and practices (not a Principle!)",
+			"• GDPR equivalent: <span>&#9989</span> Restrictions (it is an individual Right!)<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right of No Retaliation (it is an individual Right!)",
+			"• GDPR equivalent: <span>&#9989</span> Accountability<br><br>• ADPPA equivalent: <span>&#9989</span> Executive Responsibility (large data holders only)<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right of No Retaliation (it is an individual Right!)"
 		];
 
 		const pbDMessages = [
@@ -176,7 +176,7 @@
 
 				const cardText = document.createElement('div');
 				cardText.className = 'card-text';
-				cardText.innerHTML = infos[index].replace(/\n/g, '<br>');
+				cardText.innerHTML = infos[index];
 
 				card.appendChild(cardTitle);
 				card.appendChild(cardSubtitle);
@@ -261,7 +261,7 @@
 
 					const title = principles[index];
 					const subtitle = subtitles[index];
-					const content = infos[index].replace(/\n/g, '<br>');
+					const content = infos[index];
 					card.innerHTML = `
 						<div class="card-title">${title}</div>
 						<div class="card-subtitle">${subtitle}</div>
@@ -286,14 +286,16 @@
 
 				resultsDisplay.innerHTML = `
                     <h3>Results of the selected <strong>Principles</strong>:</h3>
-                    <p><span>&#8226;</span> Privacy by Design: <span class="highlight">${pbDPercentage}%</span></p>
-                    <div class="principles-list">Principles found (Privacy by Design): {${pbDFound.join(', ')}}</div>
-                    ${pbDMessagesFound.length > 0 ? `<p>Equivalence on Privacy by Design: <br> ${pbDMessagesFound.join('<br>')}</p>` : ''}
-                    <p><span>&#8226;</span> ISO/IEC 29100: <span class="highlight">${isoPercentage}%</span></p>
-                    <div class="principles-list">Principles found (ISO): {${isoFound.join(', ')}}</div>
-                    ${isoMessagesFound.length > 0 ? `<p>Equivalence on ISO/IEC 29100: <br> ${isoMessagesFound.join('<br>')}</p>` : ''}
-                    <p><span>&#8226;</span> Combined frameworks: <span class="highlight">${combinedPercentage}%</span></p>
-                    <div class="principles-list">Principles found (Combined): {${combinedFound.join(', ')}}</div>
+                    <div class="principles-list">Privacy by Design: ${pbDPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Principles found (Privacy by Design): <strong>{${pbDFound.join(', ')}}</strong></div>
+                    ${pbDMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on Privacy by Design:</strong> <br><br> <span>&#9989</span> ${pbDMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
+					<br>
+                    <div class="principles-list">ISO/IEC 29100: ${pbDPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Principles found (ISO/IEC 29100): <strong>{${isoFound.join(', ')}}</strong></div>
+					${isoMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on ISO/IEC 29100:</strong> <br><br> <span>&#9989</span> ${isoMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
+					<br>
+					<div class="principles-list">Combined frameworks: ${combinedPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Principles found (Combined): <strong>{${combinedFound.join(', ')}}</strong></div>
                 `;
 
 				document.getElementById('selected-info').style.display = 'block';
