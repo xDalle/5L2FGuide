@@ -18,6 +18,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
+    background-color: rgb(248, 248, 248);
 }
 
 body::before {
@@ -139,6 +140,8 @@ nav ul li a {
     align-items: center;
     background-color: #cce5ff;
     opacity: 1;
+    border: 2px solid #5b96d4;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-content {
@@ -234,6 +237,16 @@ nav ul li a {
     color: #333;
 }
 
+.item-group {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 50px auto 30px auto;
+    background-color: white;
+}
+
 .item-title {
     font-size: 1.0em;
     margin-top: 40px;
@@ -278,6 +291,8 @@ nav ul li a {
     padding: 30px;
     background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
     position: relative;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+
 }
 
 .select-info {
@@ -301,7 +316,7 @@ nav ul li a {
 .card.selected {
     background: #007bff;
     color: white;
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -411,16 +426,16 @@ button.enabled {
 }
 
 .circle {
-    width: 30px;  /* Adjust size as needed */
-    height: 30px; /* Adjust size as needed */
+    width: 30px;
+    height: 30px;
     border: 2px solid #007bff;
     border-radius: 50%;
-    margin: 0 5px; /* Adjust spacing between circles */
-    background-color: transparent; /* Initially empty */
+    margin: 0 5px;
+    background-color: transparent;
 }
 
 .filled {
-    background-color: #007bff; /* Color when filled */
+    background-color: #007bff;
 }
 
 .results-container {
