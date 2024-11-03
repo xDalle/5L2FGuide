@@ -167,6 +167,36 @@ nav ul li a {
     font-size: 36px;
 }
 
+@media (max-width: 768px) {
+    .carousel-text {
+        font-size: 20px;
+    }
+
+    .carousel-text strong {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        padding: 10px;
+    }
+
+    .carousel-text {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .carousel-text strong {
+        font-size: 24px;
+    }
+
+    .carousel-button {
+        width: 28px;
+        height: 28px;
+    }
+}
+
 #carousel-text.hidden {
     opacity: 0;
 }
