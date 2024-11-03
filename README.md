@@ -5,5 +5,3 @@ This guide provides insights for organizations on evaluating compliance with key
 Divided into sections such as Scope and Definitions, the guide explains key privacy terms and covers the relationship between the LGPD and other laws. It also features an interactive game that allows users to compare compliance frameworks and assess their effectiveness in meeting legal requirements (Principles and Rights).
 
 By addressing the complexities of data protection compliance, the guide serves as a valuable resource for development teams, helping them navigate privacy regulations while understanding the relevance of established standards in their business practices.
-
-https://orcid.org/0000-0002-8512-236X

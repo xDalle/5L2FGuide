@@ -167,36 +167,6 @@ nav ul li a {
     font-size: 36px;
 }
 
-@media (max-width: 768px) {
-    .carousel-text {
-        font-size: 20px;
-    }
-
-    .carousel-text strong {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel {
-        padding: 10px;
-    }
-
-    .carousel-text {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .carousel-text strong {
-        font-size: 24px;
-    }
-
-    .carousel-button {
-        width: 28px;
-        height: 28px;
-    }
-}
-
 #carousel-text.hidden {
     opacity: 0;
 }
@@ -240,7 +210,31 @@ nav ul li a {
     width: 80%;
     margin: 0 auto;
 }
-  
+
+.notintro-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 40px;
+    color: #000000;
+    padding-bottom: 16px;
+    text-align: start;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.example-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    padding-bottom: 16px;
+    text-align: start;
+    width: 80%;
+    margin: 0 auto;
+}
+
 .intro-paragraph, p, li {
     font-size: 18px;
     line-height: 28px;
@@ -248,6 +242,34 @@ nav ul li a {
     text-align: start;
     width: 80%;
     margin: 0 auto;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px; /* Set a width for the tooltip */
+    background-color: #555; /* Tooltip background color */
+    color: #fff; /* Tooltip text color */
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -100px; /* Center the tooltip */
+    opacity: 0; /* Hide the tooltip by default */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1; /* Show tooltip on hover */
 }
 
 .scope-text {
@@ -491,7 +513,8 @@ button.enabled {
 
 .highlight {
     font-weight: bold;
-    color: #2c3e50;
+    color: #007BFF;
+    text-decoration: underline;
 }
 
 .principles-list {
