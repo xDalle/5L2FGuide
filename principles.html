@@ -107,33 +107,33 @@
 		];
 
 		const pbDMessages = [
-			"Purpose = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones.",
+			"",
 			"Adequacy = Privacy as the Default Setting: This principle ensures that the default configuration of any system is privacy-friendly.",
-			"Needs = Privacy Embedded into Design: Privacy should be integrated into the design and architecture of information systems and business practices.",
+			"Needs = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones; Privacy as the Default Setting: This principle ensures that the default configuration of any system is privacy-friendly; Privacy Embedded into Design: Privacy should be integrated into the design and architecture of information systems and business practices.",
 			"Free Access = Visibility and Transparency: Organizations should make their data practices transparent to users.",
-			"Data Quality = Full Functionality: Positive-Sum, not Zero-Sum: This principle advocates for achieving both privacy and functionality.",
+			"Data Quality = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones.",
 			"Transparency = Visibility and Transparency: Organizations should make their data practices transparent to users.",
 			"Security = End-to-End Protection: Data must be secured against unauthorized access and breaches.",
 			"Prevention = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones.",
-			"",
-			"Accountability = Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle."
+			"Non-Discrimination = Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			""
 		];
 
 		const isoMessages = [
-			"Purpose = Purpose legitimacy and specification: Personal data should be collected for specific, legitimate purposes that are clearly communicated to the individual.",
-			"Adequacy = Purpose legitimacy and specification: Personal data should be collected for specific, legitimate purposes that are clearly communicated to the individual.",
-			"Needs = Collection limitation: Organizations should limit the collection of personal data to what is strictly necessary for the specified purpose, avoiding unnecessary data collection.",
-			"Free Access = Openness, transparency and notice: Individuals should have access to clear information about how their data is being collected and processed, promoting transparency in data handling practices.",
+			"Purpose = Consent and choice: Individuals should be informed and have a genuine choice regarding the collection, use, and disclosure of their personal data.",
+			"Adequacy = Collection limitation: Organizations should limit the collection of personal data to what is strictly necessary for the specified purpose, avoiding unnecessary data collection.",
+			"Needs = Data minimization: Personal data collected should be limited to what is necessary for the specified purposes, ensuring that excessive or irrelevant information is not gathered.",
+			"Free Access = Individual participation and access: Individuals should have the right to access their personal data held by organizations and be able to participate in decisions regarding its use.",
 			"Data Quality = Accuracy and quality: Organizations must ensure that personal data is accurate, complete, and kept up to date. Data should be maintained in a way that aligns with the purpose of collection.",
 			"Transparency = Openness, transparency and notice: Individuals should have access to clear information about how their data is being collected and processed, promoting transparency in data handling practices.",
 			"Security = Information security: Adequate security measures should be in place to protect personal data from unauthorized access, loss, or breach, ensuring its confidentiality and integrity.",
-			"Prevention = Information security: Organizations should adopt measures that prevent harm to individuals resulting from the misuse or improper handling of personal data. This includes assessing risks and taking proactive steps to mitigate them.",
-			"Non-Discrimination = Collection limitation: Data handling practices must be fair, treating individuals equitably without discrimination, ensuring compliance with legal obligations.",
+			"Prevention = Privacy compliance: Organizations must adhere to applicable laws and regulations regarding the processing of personal data, ensuring that privacy rights are respected and upheld.",
+			"",
 			"Accountability = Accountability: Organizations are responsible for ensuring compliance with data privacy standards and must be able to demonstrate accountability in their data processing activities."
 		];
 
-		const pbDPrinciples = [1, 2, 3, 4, 5, 6, 7, 8, 10];
-		const isoPrinciples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		const pbDPrinciples = [2, 3, 4, 5, 6, 7, 8, 9];
+		const isoPrinciples = [1, 2, 3, 4, 5, 6, 7, 8, 10];
 
 		const combinedPrinciples = [...new Set([...pbDPrinciples, ...isoPrinciples])];
 
@@ -291,7 +291,7 @@
 					<div class="principles-found"><span>&#9989;</span> Principles found (Privacy by Design): <strong>{${pbDFound.join(', ')}}</strong></div>
                     ${pbDMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on Privacy by Design:</strong> <br><br> <span>&#9989</span> ${pbDMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
 					<br>
-                    <div class="principles-list">ISO/IEC 29100: ${pbDPercentage}%</div>
+                    <div class="principles-list">ISO/IEC 29100: ${isoPercentage}%</div>
 					<div class="principles-found"><span>&#9989;</span> Principles found (ISO/IEC 29100): <strong>{${isoFound.join(', ')}}</strong></div>
 					${isoMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on ISO/IEC 29100:</strong> <br><br> <span>&#9989</span> ${isoMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
 					<br>
